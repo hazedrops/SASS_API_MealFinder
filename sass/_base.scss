@@ -1,0 +1,99 @@
+$search-bar-border: #e6e6e6;
+$clear-button-color: #d9d9d9;
+$background-color: transparent;
+$container-background-color: rgba(255, 255, 255, 0.6);
+$font-color: #000000;
+$stats-color: #818181;
+$logo-red: #db3236;
+$logo-green: #3cba54;
+$link-color: #2a2346;
+$link-hover-color: #544b72;
+$link-visited-color: #8177a1;
+$font-stack: 'Roboto', Arial, sans-serif;
+
+@mixin mq($size) {
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  display: flex;
+  justify-content: center;
+  background-image: url(https://images.unsplash.com/photo-1488477181946-6428a0291777?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: $background-color;
+  color: $font-color;
+  width: 100vw;
+  min-height: 100vh;
+  font-family: $font-stack;
+  font-size: 22px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  // height: 80vh;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  background-color: $container-background-color;
+  border-radius: 20px;
+
+  .statsDiv .stats {
+    margin-bottom: 0;
+    font-size: 0.7rem;
+  }
+
+  @include mq(768px) {
+    width: 70vw;
+    max-width: 70vw;
+  }
+
+  @include mq(1025px) {
+    width: 60vw;
+    max-width: 60vw;
+  }
+}
+
+header {
+  margin-top: 5vh;
+
+  h1 {
+    text-align: center;
+  }
+}
+
+footer {
+  margin-top: auto;
+  margin-bottom: 5vh;
+  align-self: center;
+
+  p {
+    font-size: 0.8rem !important;
+  }
+
+  a {
+    text-decoration: none;
+    color: $link-color;
+    font-weight: 600;
+  }
+
+  a:hover {
+    color: $link-hover-color;
+  }
+
+  a:visited {
+    color: $link-visited-color;
+  }
+}

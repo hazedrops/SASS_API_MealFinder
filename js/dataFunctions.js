@@ -12,7 +12,7 @@ export const retrieveSearchResults = async (searchTerm) => {
   const mealSearchString = getMealSearchString(searchTerm);
   const mealSearchResults = await requestData(mealSearchString);
 
-  console.log('mealSearchResults', mealSearchResults );
+  // console.log('mealSearchResults', mealSearchResults );
   
   let resultArray = [];
 
@@ -30,7 +30,7 @@ const getMealSearchString = (searchTerm) => {
   const rawSearchString = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`;
   const searchString = encodeURI(rawSearchString);
 
-  console.log('searchString', searchString);
+  // console.log('searchString', searchString);
   
   return searchString;
 }
@@ -64,11 +64,19 @@ const processmealResults = (results) => {
     const id = result.idMeal;
     const title = result.strMeal;
     const img = result.strMealThumb;
-    const ingredient1 = result.strIngredient1;
-    const ingredient2 = result.strIngredient2;
-    const ingredient3 = result.strIngredient3;
-    const ingredient4 = result.strIngredient4;
-    const ingredient5 = result.strIngredient5;
+
+    const ingredients = [];
+    const measures = [];
+    const finalIngredients = [];
+    const MaxNum = 21;
+    for(let i=1; i < MaxNum; i++) {
+      if(result["strIngredient" + i] === '' && result["strMeasure" + i] === '') {
+        break;        
+      } else {        
+        finalIngredients.push(result["strMeasure" + i] + " " +result["strIngredient" + i]);
+      }
+    }
+  
     const recipe = result.strInstructions;
     const video = result.strYoutube;    
 
@@ -76,7 +84,7 @@ const processmealResults = (results) => {
       id : id,
       title: title,
       img: img,
-      ingredients: [ingredient1, ingredient2, ingredient3, ingredient4, ingredient5],
+      ingredients: finalIngredients,
       recipe: recipe,
       video: video
     };

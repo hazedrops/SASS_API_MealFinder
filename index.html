@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   <link rel="stylesheet" href="dist/css/style.min.css" />
-  <script src="./js/main.js" type="module"></script>
+  <script src="./js/main.js" type="module" defer></script>
   <title>Meal Finder</title>
 </head>
 <body>
@@ -33,17 +33,16 @@
 
     <div id="statsDiv" class="statsDiv" aria-live="assertive"><p id="stats" class="stats"></p></div>
     
-    <section class="searchResults" id="searchResults">      
-      <!-- <div class="mealImage"></div>
-      <div class="ingredients"></div>
-      <div class="recipe"></div>
-      <div class="mealVideo"></div> -->
+    <section class="searchResults" id="searchResults">   
     </section>
 
+    <div class="detailModalContainer" id="detailModalContainer"></div>
+    
     <footer>
       <p><span aria-hidden="true">&lt;&lt;</span> Powered by <a href="https://www.themealdb.com/" target="_blank"> TheMealDB </a><span aria-hidden="true">&gt;&gt;</span></p>
     </footer>
 
   </main>
+  <div class="overlay"></div>
 </body>
 </html>

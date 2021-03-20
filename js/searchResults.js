@@ -45,24 +45,30 @@ export const buildSearchResults = (resultArray) => {
 };
 
 const createResultLinks = (result) => {
-  console.log('result in createResultLinks', result);
+  // console.log('result in createResultLinks', result);
   const resultColDiv = document.createElement("div");
   resultColDiv.classList.add("col-6");
   resultColDiv.classList.add("p-3");
+  
   // resultColDiv.classList.add("mx-auto");
   
   const resultImgLink = document.createElement("a");
-  resultImgLink.href = `https://www.themealdb.com/meal.php?c=${result.id}`;
+  // resultImgLink.href = `https://www.themealdb.com/meal.php?c=${result.id}`;
+  // resultImgLink.href = "#";
   resultImgLink.target = "_blank";
 
   const resultImg = document.createElement("img");
   resultImg.src = result.img;
   resultImg.alt = result.title;
   resultImg.classList.add("resultImg");
+  resultImg.setAttribute("id",`resultImg${result.id}`);
+  // resultImg.setAttribute("id","resultImg");
+
 
   // const resultInfo = document.createElement("div");
   const resultLink = document.createElement("a");
-  resultLink.href = `https://www.themealdb.com/meal.php?c=${result.id}`;
+  // resultLink.href = "#";
+  // resultLink.href = `https://www.themealdb.com/meal.php?c=${result.id}`;
   resultLink.textContent = result.title;
   resultLink.target = "_blank";
   resultLink.classList.add("resultLink");

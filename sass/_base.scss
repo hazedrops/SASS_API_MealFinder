@@ -41,6 +41,7 @@ body {
 
 main {
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   width: 80%;
@@ -96,4 +97,14 @@ footer {
   a:visited {
     color: $link-visited-color;
   }
+}
+
+.overlay {
+  display: none;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 }

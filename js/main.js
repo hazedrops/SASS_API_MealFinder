@@ -4,6 +4,7 @@ import { clearSearchText, setSearchFocus, showClearTextButton, clearPushListener
 import { deleteSearchResults, buildSearchResults, clearStatsLine, setStatsLine } from "./searchResults.js";
 import { getSearchTerm } from "./dataFunctions.js";
 import { retrieveSearchResults } from "./dataFunctions.js";
+import { showDetailModal } from "./detailModal.js";
 
 document.addEventListener("readystatechange", (event) => {
   if(event.target.readyState === 'complete') {
@@ -55,10 +56,16 @@ const processTheSearch = async () => {
   // If there are any results, build search results
   if(resultArray.length) buildSearchResults(resultArray);
 
-  console.log(resultArray.length);
+  // console.log(resultArray.length);
 
   // if(resultArray.length > 10) pagination(resultArray);
   
   // Set stats line
   setStatsLine(resultArray.length);
+
+  document.addEventListener("click", (e) => {
+    if(e.target && e.target.className === 'resultImg'){
+      showDetailModal(resultArray, e.target.id);
+    }
+  });
 };

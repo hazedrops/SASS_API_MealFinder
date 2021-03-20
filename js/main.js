@@ -51,14 +51,9 @@ const processTheSearch = async () => {
   if (searchTerm === "") return;
 
   const resultArray = await retrieveSearchResults(searchTerm);
-  // console.log("rrr", resultArray);
 
   // If there are any results, build search results
   if(resultArray.length) buildSearchResults(resultArray);
-
-  // console.log(resultArray.length);
-
-  // if(resultArray.length > 10) pagination(resultArray);
   
   // Set stats line
   setStatsLine(resultArray.length);

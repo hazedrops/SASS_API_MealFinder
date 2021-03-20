@@ -6,19 +6,12 @@ export const showDetailModal = (resultArray, id) => {
   const detailModalContainer = document.getElementById("detailModalContainer");  
   
   const detailRowDiv = buildModalDetail(resultArray, mealId);
-
-  // console.log("detailRowDiv", detailRowDiv);
   detailRowDiv.classList.add("detailModal");
   detailRowDiv.setAttribute("id", "detailModal");
-
   detailModalContainer.append(detailRowDiv);
-
-  // detailModal.classList.add("detailModalContainer");    
 };
 
 const buildModalDetail = (resultArray, mealId) => {
-  // detailModal.style.display = "block";
-
   const detailRowDiv = document.createElement("div");   
 
   const closeModalButton = document.createElement("span");   
@@ -52,20 +45,8 @@ const buildModalDetail = (resultArray, mealId) => {
       const modalIngredientTitle = document.createElement("span");
       modalIngredientTitle.classList.add("modalIngredientTitle");
 
-      // modalIngredientDiv.textContent = "Ingredients";
       modalIngredientTitle.innerHTML = "Ingredients" + "<br />";
       modalIngredientDiv.append(modalIngredientTitle);
-
-
-      // const modalIngredientUl = document.createElement("ul");
-      // modalIngredientUl.classList.add("modalIngredientUl");
-      
-      // for(let i=0; i < result["ingredients"].length; i++) {
-      //   const modalIngredientLi = document.createElement("li");
-      //   // console.log("Here", modalIngredientLi);
-      //   modalIngredientLi.innerHTML = result.ingredients[i];
-      //   modalIngredientUl.append(modalIngredientLi);
-      // }
 
       for(let i=0; i < result["ingredients"].length; i++) {
         if(result.ingredients[i] === "  ") break;
@@ -73,7 +54,6 @@ const buildModalDetail = (resultArray, mealId) => {
         const modalIngredientLi = document.createElement("span");
         modalIngredientLi.innerHTML = "&#9830;" + result.ingredients[i] + "&emsp;";
         modalIngredientDiv.append(modalIngredientLi);
-                
       }
 
       const modalDirectionsDiv = document.createElement("div");
@@ -89,17 +69,11 @@ const buildModalDetail = (resultArray, mealId) => {
       modalDirectionsDiv.append(modalDirections);
 
       detailRowDiv.append(closeModalButton);
-
       detailRowDiv.append(modalTitle);   
-      // modalIngredientDiv.append(modalIngredientUl);
       modalImgIng.append(modalImgDiv);
       modalImgIng.append(modalIngredientDiv);   
       detailRowDiv.append(modalImgIng);
       detailRowDiv.append(modalDirectionsDiv);
-
-      // detailRowDiv.style.background = `url(${result.img})`;
-
-
     }
   });
 

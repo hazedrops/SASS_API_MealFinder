@@ -9,13 +9,15 @@
   max-width: 70%;
   height: 80%;
   overflow: auto;
-  // background-image: rgba(132, 0, 0, 0.5);
   background-color: #fff;
-  color: #444;
+  color: $detail-modal-color;
   padding: 1rem;
 
   .closeModalButton {
     align-self: flex-end;
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
   }
 
   .modalTitle {
@@ -45,7 +47,7 @@
       font-style: italic;
       line-height: 1rem;
       margin-bottom: 0.5rem;
-      background-color: rgba(0, 0, 0, 0.1);
+      background-color: $highlight-color;
     }
 
     .modalImgDiv {
@@ -76,7 +78,7 @@
       font-style: italic;
       line-height: 1rem;
       margin-bottom: 0.3rem;
-      background-color: rgba(0, 0, 0, 0.1);
+      background-color: $highlight-color;
     }
 
     .modalDirections {

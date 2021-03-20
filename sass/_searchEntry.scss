@@ -1,19 +1,7 @@
 .searchEntry {
-  // @include flexColumn;
   display: flex;
   justify-content: center;
   padding-top: 40px;
-
-  // .logo {
-  //   letter-spacing: -5px;
-  //   font-size: 2rem;
-  //   font-weight: 600;
-  //   margin-bottom: 0.5rem;
-  //   @include mq(768px) {
-  //     font-size: 4rem;
-  //     letter-spacing: -10px;
-  //   }
-  // }
 
   .searchBar {
     width: 80vw;
@@ -39,7 +27,6 @@
       letter-spacing: 0.05rem;
       border: 0;
       outline: none;
-      // min-width: 150px;
 
       @include mq(768px) {
         font-size: 1.25rem;
@@ -49,7 +36,7 @@
     .button {
       cursor: pointer;
       border: 0;
-      background: transparent;
+      background: $background-color;
       min-width: 36px;
       min-height: 36px;
       outline: none;

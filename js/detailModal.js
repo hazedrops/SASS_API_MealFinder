@@ -3,8 +3,8 @@ export const showDetailModal = (resultArray, id) => {
 
   const mealId = id.slice(9);
   
-  const detailModalContainer = document.getElementById("detailModalContainer");  
-  
+  const detailModalContainer = document.getElementById("detailModalContainer");    
+
   const detailRowDiv = buildModalDetail(resultArray, mealId);
   detailRowDiv.classList.add("detailModal");
   detailRowDiv.setAttribute("id", "detailModal");
@@ -23,7 +23,7 @@ const buildModalDetail = (resultArray, mealId) => {
 
   resultArray.forEach(result => {
     if(result.id === mealId) {
-      console.log(result.title);
+      // console.log(result.title);
 
       const modalTitle= document.createElement("div");
       modalTitle.classList.add("modalTitle");
@@ -83,7 +83,8 @@ const buildModalDetail = (resultArray, mealId) => {
 const closeModal = (event) => {
   event.preventDefault();
 
-  document.getElementById("detailModal").remove();
-  document.querySelector(".overlay").style.display = "none";
+  const detailModalContainer = document.getElementById("detailModalContainer");    
 
+  document.querySelector(".overlay").style.display = "none";
+  detailModalContainer.innerHTML = "";
 }

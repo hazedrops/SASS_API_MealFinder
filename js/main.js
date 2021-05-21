@@ -60,7 +60,12 @@ const processTheSearch = async () => {
 
   document.addEventListener("click", (e) => {
     if(e.target && e.target.className === 'resultImg'){
+      console.log("target: ", e.target);
+      console.log("target.className: ", e.target.className);
       showDetailModal(resultArray, e.target.id);
-    }
+
+      let i = 0;
+      console.log("i'm in the event listener!!!" + i++);
+   }
   });
 };

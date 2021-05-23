@@ -6,7 +6,8 @@
   top: calc(100vh / 2);
   left: calc(100vw / 2);
   transform: translate(-50%, -50%);
-  max-width: 80%;
+  width: 70vw;
+  max-width: 30rem;
   height: 80%;
   overflow: auto;
   background-color: #fff;
@@ -30,7 +31,7 @@
       font-size: .75rem;
     }
 
-    @include mq(768px) {
+    @include mq(1025px) {
       font-size: 1rem;
     }
   }
@@ -47,6 +48,10 @@
       font-style: italic;
       line-height: 0.8rem;
       background-color: $highlight-color;
+
+      @include mq(1025px) {
+        font-size: .8rem;
+      }
     }
 
     .modalImgDiv {
@@ -65,13 +70,13 @@
     }
 
     .modalIngredientDiv {
-      margin: 2vh 0 1vh 0;
+      margin: 1.3rem 0 .3rem 0;
       max-width: 100%;
       height: 100%;
       font-size: 0.5rem;
 
       @include mq(600px) {
-        margin: 3vh 0 1vh 0;
+        margin: 1.5rem 0 0 0;
         font-size: 0.6rem;
       }
 

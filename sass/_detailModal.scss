@@ -6,7 +6,7 @@
   top: calc(100vh / 2);
   left: calc(100vw / 2);
   transform: translate(-50%, -50%);
-  max-width: 70%;
+  max-width: 80%;
   height: 80%;
   overflow: auto;
   background-color: #fff;
@@ -23,8 +23,12 @@
   .modalTitle {
     text-align: center;
     margin-bottom: 0.5rem;
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     font-weight: 600;
+
+    @include mq(768px) {
+      font-size: .75rem;
+    }
 
     @include mq(768px) {
       font-size: 1rem;
@@ -33,41 +37,63 @@
 
   .modalImgIng {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
-    max-height: 30%;
-    margin-bottom: 1rem;
-
-    @include mq(1025px) {
-      max-height: 20vw;
-    }
 
     .modalIngredientTitle {
-      font-size: 0.8rem;
+      font-size: 0.6rem;
       font-weight: 500;
       font-style: italic;
-      line-height: 1rem;
-      margin-bottom: 0.5rem;
+      line-height: 0.8rem;
       background-color: $highlight-color;
     }
 
     .modalImgDiv {
-      max-width: 35%;
-      max-height: 35%;
+      max-width: 60%;
+      max-height: 60%;
+      margin: 0 atuo;
 
       img {
         width: 100%;
       }
+
+      @include mq(768px) {
+        max-width: 35%;
+        max-height: 35%;
+      }
     }
 
     .modalIngredientDiv {
-      max-width: 60%;
-      overflow: hidden;
-      font-size: 0.6rem;
+      margin: 2vh 0 1vh 0;
+      max-width: 100%;
+      height: 100%;
+      font-size: 0.5rem;
+
+      @include mq(600px) {
+        margin: 3vh 0 1vh 0;
+        font-size: 0.6rem;
+      }
+
+      @include mq(768px) {
+        margin: 0 2vw;
+        font-size: 0.7rem;
+      }
 
       @include mq(1025px) {
-        // margin-top: 0.8rem;
         font-size: 0.75rem;
       }
+    }   
+
+    @include mq(768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      font-size: 0.75rem;
+    }
+
+    @include mq(1025px) {
+      max-height: 20vw;
     }
   }
 
@@ -88,5 +114,13 @@
         font-size: 0.75rem;
       }
     }
+
+    @include mq(1025px) {
+      margin-top: .5rem;
+    }
+  }
+
+  @include mq(600px) {
+    margin: 0 2vw;
   }
 }

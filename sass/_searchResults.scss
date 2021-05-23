@@ -2,11 +2,11 @@
   margin: 5%;
 
   .row {
-    .col-6 {
+    .col-md-6 {
       position: relative;
 
       .resultImg {
-        width: 100%;
+        width: 50%;
         border-radius: 10px;
       }
 
@@ -23,6 +23,12 @@
         border-bottom-left-radius: 10px;
         color: $result-link-color;
         text-decoration: none;
+      }
+    }
+
+    .col-sm-12 {
+      .resultImg {
+        width: 100%;
       }
     }
 

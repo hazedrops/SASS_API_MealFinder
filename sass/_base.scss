@@ -49,7 +49,8 @@ main {
   position: relative;
   flex-direction: column;
   align-items: center;
-  width: 80%;
+  width: 70vw;
+  max-width: 70vw;
   margin-top: 10vh;
   margin-bottom: 10vh;
   background-color: $container-background-color;
@@ -60,15 +61,23 @@ main {
     font-size: 0.7rem;
   }
 
-  @include mq(768px) {
-    width: 70vw;
-    max-width: 70vw;
-  }
-
-  @include mq(1025px) {
-    width: 60vw;
+  @include mq(992px) {
     max-width: 60vw;
   }
+
+  @include mq(1200px) {
+    max-width: 50vw;
+  }
+
+  // @include mq(768px) {
+  //   width: 70vw;
+  //   max-width: 70vw;
+  // }
+
+  // @include mq(375px) {
+  //   width: 90vw;
+  //   max-width: 90vw;
+  // }
 }
 
 header {

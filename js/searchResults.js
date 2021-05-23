@@ -26,7 +26,7 @@ export const buildSearchResults = (resultArray) => {
 
 const createResultLinks = (result) => {
   const resultColDiv = document.createElement("div");
-  resultColDiv.classList.add("col-6");
+  resultColDiv.classList.add("col-md-6", "col-sm-12");
   resultColDiv.classList.add("p-3");
   
   const resultImgLink = document.createElement("a");

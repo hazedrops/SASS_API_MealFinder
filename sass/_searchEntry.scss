@@ -2,22 +2,28 @@
   display: flex;
   justify-content: center;
   padding-top: 40px;
+  width: 80%;
 
   .searchBar {
-    width: 80vw;
+    // width: 65vw;
+    width: 100%;
     display: flex;
     border: 2px solid $search-bar-border;
     border-radius: 200px;
     padding: 0.15rem 0.25rem 0.15rem 0.75rem;
     margin: 0.75rem;
 
-    @include mq(768px) {
-      width: 60vw;
-    }
+    // @include mq(768px) {
+    //   width: 60vw;
+    // }
 
-    @include mq(1025px) {
-      width: 50vw;
-    }
+    // @include mq(992px) {
+    //   width: 56vw;
+    // }
+
+    // @include mq(1200px) {
+    //   width: 46vw;
+    // }
 
     input[type='text'] {
       background-color: $background-color;
@@ -27,6 +33,7 @@
       letter-spacing: 0.05rem;
       border: 0;
       outline: none;
+      width: 80%;
 
       @include mq(768px) {
         font-size: 1.25rem;

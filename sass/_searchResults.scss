@@ -2,6 +2,8 @@
   margin: 5%;
 
   .row {
+    height: 100%;
+
     .col-md-6 {
       position: relative;
 
@@ -18,11 +20,17 @@
         right: 0;
         left: 0;
         margin: 1rem;
-        padding: 1rem;
+        padding: .5rem;
+        font-size: .6rem;
         border-bottom-right-radius: 10px;
         border-bottom-left-radius: 10px;
         color: $result-link-color;
         text-decoration: none;
+
+        @include mq(600px) {
+          padding: 1rem;    
+          font-size: 1rem;
+        }
       }
     }
 

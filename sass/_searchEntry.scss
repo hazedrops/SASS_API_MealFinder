@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   padding-top: 40px;
-  width: 80%;
+  width: 95%;
 
   .searchBar {
     // width: 65vw;
@@ -100,5 +100,9 @@
   .searchBar:hover,
   .searchBar:focus-within {
     box-shadow: 0 2px 5px 2px $search-bar-border;
+  }
+
+  @include mq(768px) {
+    width: 80%;
   }
 }
